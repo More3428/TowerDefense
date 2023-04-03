@@ -44,10 +44,12 @@ public class Node : MonoBehaviour
       
       if (turret != null)
       {
-         Debug.Log("Cant Build here! - TODO: Display onScreen");
+         buildManager.selectNode(this);
          return;
          
       }
+      if (!buildManager.CanBuild)
+         return; 
       //Build Turret
       buildManager.BuildTurretOn(this);
    }
